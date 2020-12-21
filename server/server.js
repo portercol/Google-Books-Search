@@ -1,5 +1,6 @@
-// require express module
+// require express package and db connection file
 const express = require('express');
+require('./config/db')();
 
 // start express server
 const app = express();
