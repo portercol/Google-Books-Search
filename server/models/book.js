@@ -7,10 +7,8 @@ const BookSchema = new mongoose.Schema({
     image: String,
     title: { type: String, required: true },
     authors: { type: String, required: true },
-    published: String,
-    pageCount: String,
-    bookID: { type: String, required: true },
-    description: String
+    description: String,
+    link: { type: String, required: true }
 });
 
 // create new model of schema
