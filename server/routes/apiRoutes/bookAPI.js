@@ -1,5 +1,5 @@
 // import express router and controller handling books
-const router = reequire('express').Router();
+const router = require('express').Router();
 const bookController = require('../../controller/books');
 
 // route hit for books
