@@ -13,4 +13,5 @@ router.route('/:id')
     .put(bookController.update)
     .delete(bookController.remove);
 
+// export router from bookAPI.js
 module.exports = router;
