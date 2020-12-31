@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // create function to set up connection to mongoDB
 async function db() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todo_db', {
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,

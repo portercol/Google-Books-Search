@@ -5,6 +5,7 @@ const db = require('../models');
 module.exports = {
   // use findAll to find all books
   findAll: function(req, res) {
+    console.log("find all found");
     db.Book
       .find(req.body)
       .sort({ date: -1 })
@@ -13,6 +14,7 @@ module.exports = {
   },
   // use findById to find specific book by ID
   findById: function(req, res) {
+    console.log("found by ID");
     db.Book
       .findById(req.params.id)
       .then(bookModel => res.json(bookModel))
@@ -20,6 +22,7 @@ module.exports = {
   },
   // use create to create a new book
   create: function(req, res) {
+    console.log(" created new book");
     db.Book
       .create(req.body)
       .then(bookModel => res.json(bookModel))
@@ -27,6 +30,7 @@ module.exports = {
   },
   // use update to find book by ID and update/save
   update: function(req, res) {
+    console.log("updated book");
     db.Book
       .findOneAndUpdate({ id: req.params.id }, req.body)
       .then(bookModel => res.json(bookModel))
@@ -34,8 +38,10 @@ module.exports = {
   },
   // use remove to find book by ID and delete
   remove: function(req, res) {
+    console.log("deleted book", req.params.id);
     db.Book
-      .deleteOne({ bookID: req.params.id })
+      .deleteOne({ _id: req.params.id })
+      .then(bookModel => res.json(bookModel))
       .catch(err => res.status(404).json(err));
   }
 };

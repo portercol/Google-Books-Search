@@ -2,6 +2,16 @@
 const router = require('express').Router();
 const bookController = require('../../controller/books');
 
+router.get('/', (req, res) => {
+    console.log("Hello world2.0");
+    res.json("hello world2.0")
+  })
+
+router.get('/', (req, res) => {
+    console.log("Hello world");
+    res.json("hello world")
+  })
+
 // route hit for books
 router.route('/')
     .get(bookController.findAll)
