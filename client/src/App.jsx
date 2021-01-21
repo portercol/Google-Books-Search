@@ -9,7 +9,6 @@ console.log("found");
 
   return (
     <div className="App">
-      <h1>HELOOOOOOOO</h1>
     </div>
   );
 }
